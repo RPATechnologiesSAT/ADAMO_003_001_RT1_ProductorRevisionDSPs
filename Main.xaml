@@ -133,7 +133,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Resumen Proceso:" DisplayName="ADAMO_003_001_RT1_ProductorRevisionDSPs" sap:VirtualizedContainerService.HintSize="634,688" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Resumen Proceso:" DisplayName="ADAMO_03_001_RT1_ProductorRevisionDSPs" sap:VirtualizedContainerService.HintSize="634,688" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
