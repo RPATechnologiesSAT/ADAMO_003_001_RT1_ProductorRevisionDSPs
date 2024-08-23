@@ -1,12 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sn="clr-namespace:System.Net;assembly=System.Net.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="in_ConfigCredentials" Type="InArgument(scg:Dictionary(x:String, sn:NetworkCredential))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1049,1369</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1429,1173</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -111,16 +110,18 @@
       <AssemblyReference>NIMOGORDILLO_VPV_RT1_01_VERIFICACIONPAGOVEHICULO.Core</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="550,1304" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="550,1068" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="488,1193" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+    <TryCatch DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="488,957" sap2010:WorkflowViewState.IdRef="TryCatch_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -128,38 +129,34 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Etapas del Proceso" sap:VirtualizedContainerService.HintSize="450,943" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <Sequence DisplayName="Etapas del Proceso" sap:VirtualizedContainerService.HintSize="450,707" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_ItemsPendientes" />
+          </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Portanet - Invoke Workflow File (Portanet\Login_Portanet.xaml)" sap:VirtualizedContainerService.HintSize="388,258" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Portanet\Login_Portanet.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Portanet - Invoke Workflow File (Portanet\Login_Portanet.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Portanet\Login_Portanet.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_Config("URL_Portanet").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderName">[in_Config("OrchestratorFolderName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAssetName">[in_Config("PortanetCredentialsAssetName").ToString]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navegar&amp;DescargarItemsPendientes - Invoke Workflow File (Portanet\Navegar&amp;DescargarItemsPendientes.xaml)" sap:VirtualizedContainerService.HintSize="388,228" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Portanet\Navegar&amp;DescargarItemsPendientes.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navegar&amp;DescargarItemsPendientes - Invoke Workflow File (Portanet\Navegar&amp;DescargarItemsPendientes.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Portanet\Navegar&amp;DescargarItemsPendientes.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtItemsPendientes">[dt_ItemsPendientes]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,266" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-          </ui:ForEachRow>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Filtrar&amp;SubidaOrq - Invoke Workflow File (Portanet\Filtrar&amp;SubidaOrq.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Portanet\Filtrar&amp;SubidaOrq.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtItemsPendientes">[dt_ItemsPendientes]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderName">[in_Config("OrchestratorFolderName").ToString]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
@@ -228,7 +225,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[exception.Data(&quot;FaultedDetails&quot;) IsNot Nothing AndAlso exception.Data(&quot;FaultedDetails&quot;).GetType().GetProperty(&quot;DisplayName&quot;) IsNot Nothing]" DisplayName="Business Exception Details" sap:VirtualizedContainerService.HintSize="410,473" sap2010:WorkflowViewState.IdRef="If_8">
+              <If Condition="[exception.Data(&quot;FaultedDetails&quot;) IsNot Nothing AndAlso exception.Data(&quot;FaultedDetails&quot;).GetType().GetProperty(&quot;DisplayName&quot;) IsNot Nothing]" DisplayName="Business Exception Details" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="If_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>

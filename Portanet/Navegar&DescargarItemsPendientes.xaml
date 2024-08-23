@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092,2009</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>670,1969</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavegarSeccionItemsPendientes_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,16 +114,16 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navegar_DescargarItemsPendientes" sap:VirtualizedContainerService.HintSize="680,1944" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navegar_DescargarItemsPendientes" sap:VirtualizedContainerService.HintSize="680,1904" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="618,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Iniciando secuencia 'NavegarSeccionItemsPendientes' -----&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="618,1471" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="618,1431" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: portanet.net/General" sap:VirtualizedContainerService.HintSize="580,1221" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: portanet.net/General" sap:VirtualizedContainerService.HintSize="580,1181" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -163,7 +163,7 @@
                     </ActivityAction>
                   </ui:GetLastDownloadedFile.Body>
                 </ui:GetLastDownloadedFile>
-                <ui:ReadRange AddHeaders="True" DataTable="[out_dtItemsPendientes]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A2" SheetName="Consola Mensajes Pendientes" WorkbookPath="[ficheroExcelDescargado.FullName]" />
+                <ui:ReadRange AddHeaders="False" DataTable="[out_dtItemsPendientes]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A3" SheetName="Consola Mensajes Pendientes" WorkbookPath="[ficheroExcelDescargado.FullName]" />
               </Sequence>
             </ActivityAction>
           </uix:NApplicationCard.Body>
