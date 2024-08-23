@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1429,2056</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1429,2157</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Filtrar_SubidaOrq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Filtrar_SubidaOrq" sap:VirtualizedContainerService.HintSize="730,1911" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Filtrar_SubidaOrq" sap:VirtualizedContainerService.HintSize="730,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="newHeader" />
     </Sequence.Variables>
@@ -131,9 +131,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="668,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Iniciando secuencia 'Filtrar_SubidaOrq' -----&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="668,1438" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="668,1619" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="630,1188" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="630,1369" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -166,6 +166,7 @@
               </scg:List>
             </ui:FilterDataTable.SelectColumns>
           </ui:FilterDataTable>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Subiendo datos a la cola del orquestador&quot;]" />
           <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItemsPendientes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="568,876" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
