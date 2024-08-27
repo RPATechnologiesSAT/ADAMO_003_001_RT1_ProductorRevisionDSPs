@@ -1,0 +1,448 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RecogerInfoItemASP" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_dtItemsPendientes" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1828,4236</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>RecogerInfoItemASP_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RecogerInfoItemASP" sap:VirtualizedContainerService.HintSize="1838,4131" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1776,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Iniciando secuencia 'RecogerInfoItemASP' -----&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1776,3658" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Visualización y Generación de Mensajes" sap:VirtualizedContainerService.HintSize="1738,3408" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1704,3151" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="sd:DataTable" Name="aux_dtItemsPendientes" />
+                  <Variable x:TypeArguments="x:Int32" Name="index" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="1642,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[aux_dtItemsPendientes]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[io_dtItemsPendientes]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[aux_dtItemsPendientes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1642,2916" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1608,2730" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="existLineaASP" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ID proceso'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1566,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Text="[CurrentRow(&quot;Column4&quot;).ToString]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="f03e796b-4737-42a3-93ea-6d40027b7dbe" CvElementArea="899, 325, 132, 20" CvType="InputBox" DesignTimeRectangle="900, 327, 130, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="81efae09-5542-4645-84cf-679f3871aafd" InformativeScreenshot="2ce640c61e792056cd1414fec3ffb9de.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CVScreenId="f03e796b-4737-42a3-93ea-6d40027b7dbe" CvElementArea="766, 321, 133, 27" CvTextArea="799, 331, 67, 12" CvTextArgument="ID proceso:" CvType="Button" DesignTimeRectangle="767, 323, 131, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='amo' tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='amo' type='' tag='TD' aaname='ID proceso:*' check:innerText='ID proceso:' /&gt;" Guid="9b9aa5fa-9a77-48e5-a9a8-b80ace816d7d" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Buscar'" sap:VirtualizedContainerService.HintSize="1566,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="aa1c53ec-ceb1-4f9e-8738-46c7cdfa183b" CvElementArea="1154, 327, 50, 17" CvTextArea="1162, 330, 36, 10" CvTextArgument="Buscar" CvType="Button" DesignTimeRectangle="1154, 327, 50, 18" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='' aaname='Búsqueda Mensajería IdProceso' /&gt;" Guid="0c08f852-ad0f-49a3-a62a-eaf42f91c833" InformativeScreenshot="7367325a8e49aed86ef0e9e16b698ac8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NCheckState DisplayName="Check App State: Mensaje ASP" Exists="[existLineaASP]" sap:VirtualizedContainerService.HintSize="1566,1506" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Timeout="5" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Fila con mensaje ASP encontrada.&quot;]" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1062,1289" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'ID proceso'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1000,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Text="[CurrentRow(&quot;Column4&quot;).ToString]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="f03e796b-4737-42a3-93ea-6d40027b7dbe" CvElementArea="899, 325, 132, 20" CvType="InputBox" DesignTimeRectangle="900, 327, 130, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="81efae09-5542-4645-84cf-679f3871aafd" InformativeScreenshot="2ce640c61e792056cd1414fec3ffb9de.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="f03e796b-4737-42a3-93ea-6d40027b7dbe" CvElementArea="766, 321, 133, 27" CvTextArea="799, 331, 67, 12" CvTextArgument="ID proceso:" CvType="Button" DesignTimeRectangle="767, 323, 131, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='amo' tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl class='amo' type='' tag='TD' aaname='ID proceso:*' check:innerText='ID proceso:' /&gt;" Guid="9b9aa5fa-9a77-48e5-a9a8-b80ace816d7d" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Buscar'" sap:VirtualizedContainerService.HintSize="1000,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="aa1c53ec-ceb1-4f9e-8738-46c7cdfa183b" CvElementArea="1154, 327, 50, 17" CvTextArea="1162, 330, 36, 10" CvTextArgument="Buscar" CvType="Button" DesignTimeRectangle="1154, 327, 50, 18" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tableCol='33' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='' aaname='Búsqueda Mensajería IdProceso' /&gt;" Guid="0c08f852-ad0f-49a3-a62a-eaf42f91c833" InformativeScreenshot="7367325a8e49aed86ef0e9e16b698ac8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NCheckState DisplayName="Check App State: Mensaje ASP" Exists="[existLineaASP]" sap:VirtualizedContainerService.HintSize="1000,719" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Timeout="5" Version="V3">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Fila con mensaje ASP encontrada.&quot;]" />
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="496,502" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[&quot;No se encuentra linea con mensaje ASP para el ID Proceso &quot;+CurrentRow(&quot;Column4&quot;).ToString]" />
+                                    <Assign DisplayName="Assign Column Resultado" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[io_dtItemsPendientes(index)("Resultado")]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">["KO"]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign DisplayName="Assign Column Observaciones" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[io_dtItemsPendientes(index)("Observaciones")]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">["No se encuentra linea con mensaje ASP para el ID Proceso "+CurrentRow("Column4").ToString]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="43f90dad-6d0c-499e-9e2e-2c530defd0f0" CvElementArea="1487, 400, 46, 18" CvTextArea="1492, 403, 35, 10" CvTextArgument="Detalle" CvType="Button" DesignTimeRectangle="1488, 421, 43, 16" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' visibleinnertext='Crear Nuevo Mensaje*' css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' /&gt;&lt;webctrl tag='TR' visibleinnertext='*ASP*' /&gt;&lt;webctrl aaname='mostrar detalle' tag='IMG' colName='NB' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='mostrar detalle' type='' tag='IMG' class='' /&gt;" Guid="a2ad95d8-f170-4d8c-9dbd-79418d5c8e60" InformativeScreenshot="a888a38d9ad57715179d6ecfff2a0ad8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="43f90dad-6d0c-499e-9e2e-2c530defd0f0" CvElementArea="1487, 400, 46, 18" CvTextArea="1492, 403, 35, 10" CvTextArgument="Detalle" CvType="Button" DesignTimeRectangle="1488, 421, 43, 16" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' visibleinnertext='Crear Nuevo Mensaje*' css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' /&gt;&lt;webctrl tag='TR' visibleinnertext='*ASP*' /&gt;&lt;webctrl aaname='mostrar detalle' tag='IMG' colName='NB' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='mostrar detalle' type='' tag='IMG' class='' /&gt;" Guid="a2ad95d8-f170-4d8c-9dbd-79418d5c8e60" InformativeScreenshot="a888a38d9ad57715179d6ecfff2a0ad8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                        <If Condition="[existLineaASP]" DisplayName="Linea ASP Encontrada?" sap:VirtualizedContainerService.HintSize="1566,641" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,459" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Detalle ASP'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3a10a8c-86c9-4e76-a64f-137520ca5a42" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.portanet.net/ConsolaMensajes" CVScreenId="8c353e4d-5432-4223-b7c7-6231adcb0558" CvElementArea="1489, 420, 44, 18" CvTextArea="1493, 423, 34, 11" CvTextArgument="Detalle" CvType="Button" DesignTimeRectangle="1488, 401, 43, 16" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='TABLE' visibleinnertext='Crear Nuevo Mensaje*' css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' /&gt;&lt;webctrl tag='TR' visibleinnertext='*ASP*' /&gt;&lt;webctrl aaname='mostrar detalle' tag='IMG' colName='NB' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' visibleinnertext='Crear Nuevo Mensaje*' /&gt;&lt;webctrl tag='TR' visibleinnertext='*ASP*' /&gt;&lt;webctrl aaname='mostrar detalle' tag='IMG' colName='NB' type='' class='' /&gt;" Guid="e0ff5950-c933-485d-886a-ca365a6ee3ba" InformativeScreenshot="b3c0116fbf6cc6d68624741c96ee2aa9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Visualización y Generación de Mensajes' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Portanet - Mostrar Formulario Detalle" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2abce8bc-bcce-4d2b-9bc8-7d4040aa47cf" Version="V2" WindowResize="Maximize">
+                                <uix:NApplicationCard.Body>
+                                  <ActivityAction x:TypeArguments="x:Object">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,666" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NGetText DisplayName="Get Text 'Rango Inicial'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="2abce8bc-bcce-4d2b-9bc8-7d4040aa47cf" TextString="[io_dtItemsPendientes(index)(&quot;Rango Inicial&quot;)]" Version="V3">
+                                        <uix:NGetText.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.portanet.net/MuestraFormularioDetalle" CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="351, 396, 58, 10" CvType="AnyWordGroup" DesignTimeRectangle="352, 395, 57, 12" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='inputn' /&gt;" Guid="8a1fa1dc-d4c7-4672-9015-33d32d18570b" ImageBase64="" InformativeScreenshot="67d132be877e4450a716df11f221ed1d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Mostrar' title='Portanet' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="88, 395, 68, 13" CvTextArgument="Rango inicial:" CvType="Text" DesignTimeRectangle="89, 395, 263, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='Rango inicial:' check:innerText='Rango inicial:' /&gt;" Guid="bac4c250-cd17-4647-9038-38a28dba1bbd" SearchSteps="Selector, FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NGetText.Target>
+                                      </uix:NGetText>
+                                      <uix:NGetText DisplayName="Get Text 'Rango Final'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="2abce8bc-bcce-4d2b-9bc8-7d4040aa47cf" TextString="[io_dtItemsPendientes(index)(&quot;Rango Final&quot;)]" Version="V3">
+                                        <uix:NGetText.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.portanet.net/MuestraFormularioDetalle" CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="877, 396, 58, 10" CvType="AnyWordGroup" DesignTimeRectangle="878, 395, 57, 12" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl tableCol='4' tableRow='1' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='inputn' tag='FONT' /&gt;" Guid="a4e40c25-8b67-4394-99ff-8737e4001f59" ImageBase64="" InformativeScreenshot="5c51640cfa4c93a02d1fcb5b65e486d3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Mostrar' title='Portanet' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="632, 395, 60, 13" CvTextArgument="Rango final:" CvType="Text" DesignTimeRectangle="632, 395, 246, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='3' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' aaname='Rango final: ' check:innerText='Rango final:' /&gt;" Guid="a39435ea-8f3a-44db-a2ca-81132c293b77" SearchSteps="Selector, FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NGetText.Target>
+                                      </uix:NGetText>
+                                      <uix:NGetText DisplayName="Get Text 'NRN Afectado'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="2abce8bc-bcce-4d2b-9bc8-7d4040aa47cf" TextString="[io_dtItemsPendientes(index)(&quot;NRN Afectado&quot;)]" Version="V3">
+                                        <uix:NGetText.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://www.portanet.net/MuestraFormularioDetalle" CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="1455, 396, 40, 10" CvType="AnyWordGroup" DesignTimeRectangle="1456, 395, 39, 12" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl tableCol='6' tableRow='1' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='inputn' tag='FONT' /&gt;" Guid="259e7161-3d7d-4f1e-a7f4-6c6ad53cdd29" ImageBase64="" InformativeScreenshot="34c689bae6d84717fe42c36a06944272.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='Mostrar' title='Portanet' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CVScreenId="54c410cc-59f0-4e12-8e18-3bfee5c24502" CvTextArea="1175, 395, 73, 11" CvTextArgument="NRN afectado:" CvType="Text" DesignTimeRectangle="1176, 395, 280, 12" ElementType="Text" FullSelectorArgument="&lt;webctrl tableRow='25' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='5' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' aaname='NRN afectado: ' check:innerText='NRN afectado:' /&gt;" Guid="4787bab0-f8f4-4927-804b-8bb59fbb617f" SearchSteps="Selector, FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NGetText.Target>
+                                      </uix:NGetText>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </uix:NApplicationCard.Body>
+                                <uix:NApplicationCard.TargetApp>
+                                  <uix:TargetApp Area="468, 162, 783, 680" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVDhPY6A64OTmlvT08T8Qk5D6NT454x8Ig9ggMZAcVBl2oK2rXxiXmPYLqOl/fHL63/CouOchEbGPoAb9B8mB1ECVowKQBEhhXFL6H31D41omJiZmkLiEpLQDxEA4/odhCMhpcYnpv0Ga+fkF1KHCDKbmVj1hUXHP0AwAuwTFOyD/gSRANkOFGERExUzRNSJjkB6oUgaGmPiUbyA/w5wNAhKSUvYBweFXQTg2IfU7ugGggIUqZWAACvwDBRiUiwHsnVxXIGuOTUz9CdIDlYYYgKwAFBbBYdF3DYxM6kGu4uTkEjc2teiwtnWYo6CoHAqyDMUAiBcQBiBjFVX1OKgyMAAZCPIuihdggYgNW9rYz4QqAwNQQIPEUQIRFo3IGq1sHWZraOlkS0pJO0GVMYCiGOQ9jGgEAVhCghkgr6gUDJUCOxtkM0gzSA2+1FgES8pxSWm/w6Jin0ICLP0vWAxfUoYBkNNA/iMrM5EOGBgAbhv5+a23N0oAAAAASUVORK5CYII=" InformativeScreenshot="0c9060fa4b00de4079c74be316c84798.jpg" Selector="&lt;html app='chrome.exe' title='Portanet' url='*portanet.net/MuestraFormularioDetalle*' /&gt;" Title="Portanet" />
+                                </uix:NApplicationCard.TargetApp>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NApplicationCard>
+                              <Assign DisplayName="Assign Column Resultado" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[io_dtItemsPendientes(index)("Resultado")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">["OK"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1910, 911" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbxSURBVFhHpZZtTFvnFcf9pWuypg3tmjVrGmLeEoMBG2PaJBDb2CkvyQJpvlXtFqRpmrSXT5s67a3pl0nTptXkhdAklEsCbZdG3VsrVe3AhhBCs3ZDi5ZAo21OA5hAOztNmrXhXj9n//M8j415SUe7I/30P+fh+vzPufcasC03YgF3zkzQ0zITrDLAyPshb3ImVEXTQS/NBDn3RmeClcZ0qHIvX6s/9v/HVIPbfjVU1com2kxcra2k6VovqBQM14sIVBpTAbddt/nsoTb2htlUGgWUWcYQ9dWAR0wFOPcgV8r1VMCj8AOfZ59uufzgyWES00a6sUfm8ww0cTZiuPZViLi/Qp1xrohNbV7m3ZiurXChUSzbIIO/QjDKUBlpE4r73BmdhE5ucys4V/X/HoI3h1EsvYFSjTaa9Kmm8W3aSDXPMJGmxkWTNS4BBaoer3ZhCMfSQ/Azh1FMGWU1z5ipxnIA1hq3kDUbaENlJHMxLmul49XljFDqii35LZnwucMZE4XI3khvo41Uzg1lzc1l7aIrOGO0KV3ZupAycWVLWVjbqnC/tNve/h3/nAmboqk2I7mNNpn57jfoxss9ZMYnKR3i5rskZl4la2QXWecqGcGaYn3LQ5JzHpx5BM5kTcNZ70PlS3uMbUYzjYUq1Fb6dknFxDKvr6YbJ3u0JVE8Kah/bBaYdGkqpU8xzNSLZL3jJ/OtChgxbgzhxjDQYbeqoajVXXAbu3M8LzxGzL4fBjO3io1Z39tSRuN1W+nWpTFp8JeYSd8yPqKqZ65R1T4N8qbwdYqOzsprxM0xst6ugZmLDZUOc85aDi3HEOVJGsG74H5hd4u7ZzdVANb+Jq80ZfCsBOv133TLxkein5AXhhmezso1R3ENh4h3K7PhMk1pljJOMXumpMXm7m42ALm6m4S7p1k8+Ys6ury5lN7b7BTMxGP1siFvV/l0UuLROse1eefv4C5xpC7sFdZZJ5lnS8hagtRwiWFzdTdHXScwwIkmTTO9useLIZwUe8RJN177nWy289kPqeJnyTlglNF0rutvdt6QnxFTJ4R5thhm2TgwlINS0NRQ8Yit/HhTsvz4LkpT1rWLth9spL/7yij2cIm4dWmUxuIWudF8MYnbkKTJJF7MTyZguBGGmiEJMSZInS1K2MqMr8JUImSu659/u5piVcWCN4lcnCXXTxNLA7P5dYLKoRH9QlpDRWSeKSSLQW4NaZV1gbCVdu6kUpiWGjuF1C6lj7Q30vkap2zSd/EWlaHpQtgoW7PP+zA0h3WmAEb5wjoDhgowTD7O5uABks7OHUKxk6BAqvjeUz5hxidoMpGi0p/8+zMxiscmProAkzwyB/Ogdgxhl7XKN3CdsJU8v+OvJR2NpNhBqGXuZH2+UQz2n5SbtHRcJycaO38MWD+Ful9dk59JTZ+CGRvlCnMwlyzJBrBecG4Oro/aHB0NRvGxRpqjQQ7gONYgOP/6a0/JZn/+1yyVwLwYKP1A5nP13HkvHhmH9fYWMk+vBw/B9CHBqnOyWE+vM2yOow0tIGPIyPpovQCsdPy8+ioe6rtJjh99QA6YSF0Izg/1/kdee228E4brYLYO2z6I/EGYK6y0Dqzba7MbgZziI/XJTUfqKRsH69E6wXi79ojR9/8hG//pwi0K/jJJm2CYzdeOfUjn/qlevInEu5QYLCFz4CuatTBdK9JqnX5A5hTNUX+WNz1X37rpuTraqJH5kTqRroHwGntE1/nfSgOOi5OWHIaZwEuaDr6m849bsN1aGD+QwWLt/7JUa2CNsPrXGNKcw9HeYN/Y/igxRVrTeRaisH27CPQ8Sa+MvkEX9R3hGL9+lYy/vUJP/P4H5O/wwWiNYkBr//0ytwbuFzIH2H7+f0ZFbaHWosPbKU1hG+ujxKaFhyWkNCT4ZxldwKk/FMHkS8pU6n3YVipZyFlTA/ct/k/ZHg7kFBwOxQraVOOCQyEqBKx8JpXP2ubX2Tze9TDM7hVm9F4YAlaAM605wormxLTl4sAQ9oK2YCzdMP9gkApA/qGgkHCu66XOL7+JZxxdjQHuAathuBqGUNSa2KJbvzB4iPwDtTHZ9EAt5R2sFQznafJY8XNWmR8I0ve7y8mM3I1N71EKrOgqmK4SnM9G7ob5ik83TwcPkbe/NgbIfiAg8vYHpMochvb9Kk9T076VLr+B5xxZxabQu+ZhRe6Kfbxc8+zAIM/YW2F+W/wYxi86Xs4ns28ljL4oMSMrBNdmBPStDGe+758n+G7khv3GhrCfNrT6Re6zPsF5btgn6+q2zTBZobmTzF4QuTNp9q5s/fj1z7H17QKD5Kz/9bYWDNCFAaLQJKCTp/A7PXJHItX7hZFU7wpjtu+OluVvbLP9F5lmWAkTeM7rAAAAAElFTkSuQmCC" InformativeScreenshot="defd4fe3d93169f9771f8eecdcaa9b71.jpg" Selector="&lt;html app='chrome.exe' url='*portanet.net*' /&gt;" Title="portanet.net/General" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1742,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Gestión de excepción de sistema" sap:VirtualizedContainerService.HintSize="450,317" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;SE: &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="1742,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Gestión de excepción de negocio" sap:VirtualizedContainerService.HintSize="450,317" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;BE: &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1776,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;----- Finalizando secuencia 'RecogerInfoItemASP' -----&quot;]" />
+  </Sequence>
+</Activity>

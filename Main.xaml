@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Framework" this:Framework.in_ConfigPath="Data/Config.json" this:Framework.in_OrchestratorQueueName="RevisionDSPs" this:Framework.in_OrchestratorFolderName="Shared" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sn="clr-namespace:System.Net;assembly=System.Net.Primitives" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Framework" this:Framework.in_ConfigPath="Data/Config.json" this:Framework.in_OrchestratorQueueName="VentanaCambio" this:Framework.in_OrchestratorFolderName="Shared" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sn="clr-namespace:System.Net;assembly=System.Net.Primitives" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ConfigPath" Type="InArgument(x:String)" />
     <x:Property Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1429,753</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1768,753</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Framework_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -924,7 +924,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Proceso principal" DisplayName="Process State" sap:VirtualizedContainerService.HintSize="193,93" sap2010:WorkflowViewState.IdRef="State_5">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Proceso principal" DisplayName="Process State" sap:VirtualizedContainerService.HintSize="596,1281" sap2010:WorkflowViewState.IdRef="State_5">
               <State.Entry>
                 <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="550,835" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                   <sap:WorkflowViewStateService.ViewState>

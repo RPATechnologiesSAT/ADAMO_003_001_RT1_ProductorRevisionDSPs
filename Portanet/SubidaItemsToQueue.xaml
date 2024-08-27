@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1429,2157</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1388,1962</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Filtrar_SubidaOrq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,41 +121,31 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Filtrar_SubidaOrq" sap:VirtualizedContainerService.HintSize="730,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="newHeader" />
-    </Sequence.Variables>
+  <Sequence DisplayName="SubidaItemsToQueue" sap:VirtualizedContainerService.HintSize="838,1857" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="668,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Iniciando secuencia 'Filtrar_SubidaOrq' -----&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="668,1619" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="776,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;----- Iniciando secuencia 'SubidaItemsToQueue' -----&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="776,1384" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="630,1369" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence sap:VirtualizedContainerService.HintSize="738,1424" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:FilterDataTable DataTable="[in_dtItemsPendientes]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="568,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[in_dtItemsPendientes]" SelectColumnsMode="Remove">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="676,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Subiendo datos a la cola del orquestador&quot;]" />
+          <ui:FilterDataTable DataTable="[in_dtItemsPendientes]" DisplayName="Filter Data Table: Resultado = OK" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="676,52" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[in_dtItemsPendientes]" SelectColumnsMode="Remove">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                 <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
                   <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["Resultado"]</InArgument>
                   </ui:FilterOperationArgument.Column>
                   <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:String">["DSP1"]</InArgument>
-                  </ui:FilterOperationArgument.Operand>
-                </ui:FilterOperationArgument>
-                <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
-                  <ui:FilterOperationArgument.Column>
-                    <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
-                  </ui:FilterOperationArgument.Column>
-                  <ui:FilterOperationArgument.Operand>
-                    <InArgument x:TypeArguments="x:String">["DSP2"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["OK"]</InArgument>
                   </ui:FilterOperationArgument.Operand>
                 </ui:FilterOperationArgument>
               </scg:List>
@@ -165,47 +155,57 @@
                 <x:Null />
               </scg:List>
             </ui:FilterDataTable.SelectColumns>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:FilterDataTable>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="568,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Subiendo datos a la cola del orquestador&quot;]" />
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItemsPendientes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="568,876" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItemsPendientes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="676,1040" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="534,690" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="str_IdProceso" />
-                    <Variable x:TypeArguments="x:String" Name="str_Fecha" />
-                  </Sequence.Variables>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="642,854" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="492,82" sap2010:WorkflowViewState.IdRef="Assign_3">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[str_IdProceso]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[CurrentRow("Column4").ToString]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,480" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="600,766" sap2010:WorkflowViewState.IdRef="RetryScope_1">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,305" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="558,511" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_OrchestratorFolderName]" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_OrchestratorQueueName]" Reference="[str_IdProceso + &quot;-&quot; + now.ToString(&quot;ddMMyyyy&quot;)]">
-                            <ui:AddQueueItem.ItemInformation>
-                              <InArgument x:TypeArguments="x:String" x:Key="IDProceso">[str_IdProceso]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="TipoProceso">[CurrentRow("Column1").ToString]</InArgument>
-                            </ui:AddQueueItem.ItemInformation>
-                          </ui:AddQueueItem>
+                          <Switch x:TypeArguments="x:String" DisplayName="Switch Add Queue Item" Expression="[in_OrchestratorQueueName]" sap:VirtualizedContainerService.HintSize="496,400" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" x:Key="RevisionDSPs" DisplayName="Add Queue Item" FolderPath="[in_OrchestratorFolderName]" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_OrchestratorQueueName]" Reference="[CurrentRow(&quot;Column4&quot;).ToString + &quot;-&quot; + now.ToString(&quot;ddMMyyyy&quot;)]">
+                              <ui:AddQueueItem.ItemInformation>
+                                <InArgument x:TypeArguments="x:String" x:Key="IDProceso">[CurrentRow("Column4").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="TipoProceso">[CurrentRow("Column1").ToString]</InArgument>
+                              </ui:AddQueueItem.ItemInformation>
+                            </ui:AddQueueItem>
+                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" x:Key="VentanaCambio" DisplayName="Add Queue Item" FolderPath="[in_OrchestratorFolderName]" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_OrchestratorQueueName]" Reference="[CurrentRow(&quot;Column4&quot;).ToString + &quot;-&quot; + now.ToString(&quot;ddMMyyyy&quot;)]">
+                              <ui:AddQueueItem.ItemInformation>
+                                <InArgument x:TypeArguments="x:String" x:Key="IDProceso">[CurrentRow("Column4").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="TipoProceso">[CurrentRow("Column1").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="RangoInicial">[CurrentRow("Rango Inicial").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="RangoFinal">[CurrentRow("Rango Final").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="NRNAfectado">[CurrentRow("NRN Afectado").ToString]</InArgument>
+                              </ui:AddQueueItem.ItemInformation>
+                            </ui:AddQueueItem>
+                          </Switch>
                         </Sequence>
                       </ActivityAction>
                     </ui:RetryScope.ActivityBody>
@@ -226,7 +226,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="634,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="742,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -249,7 +249,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="634,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="742,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -273,6 +273,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="668,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;----- Finalizando secuencia 'Filtrar_SubidaOrq' -----&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="776,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;----- Finalizando secuencia 'SubidaItemsToQueue' -----&quot;]" />
   </Sequence>
 </Activity>

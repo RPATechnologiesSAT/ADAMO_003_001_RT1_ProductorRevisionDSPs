@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1429,1173</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1388,2427</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,16 +112,17 @@
       <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="550,1068" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="760,2362" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="488,957" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+    <TryCatch DisplayName="Proceso" sap:VirtualizedContainerService.HintSize="698,2251" sap2010:WorkflowViewState.IdRef="TryCatch_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -129,7 +130,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Etapas del Proceso" sap:VirtualizedContainerService.HintSize="450,707" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <Sequence DisplayName="Etapas del Proceso" sap:VirtualizedContainerService.HintSize="558,1599" sap2010:WorkflowViewState.IdRef="Sequence_40">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ItemsPendientes" />
           </Sequence.Variables>
@@ -138,19 +139,127 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Portanet - Invoke Workflow File (Portanet\Login_Portanet.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Portanet\Login_Portanet.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login_Portanet - Invoke Workflow File (Portanet\Login_Portanet.xaml)" sap:VirtualizedContainerService.HintSize="496,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Portanet\Login_Portanet.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_Config("URL_Portanet").ToString]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolderName">[in_Config("OrchestratorFolderName").ToString]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAssetName">[in_Config("PortanetCredentialsAssetName").ToString]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navegar&amp;DescargarItemsPendientes - Invoke Workflow File (Portanet\Navegar&amp;DescargarItemsPendientes.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Portanet\Navegar&amp;DescargarItemsPendientes.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navegar&amp;DescargarItemsPendientes - Invoke Workflow File (Portanet\Navegar&amp;DescargarItemsPendientes.xaml)" sap:VirtualizedContainerService.HintSize="496,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Portanet\Navegar&amp;DescargarItemsPendientes.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtItemsPendientes">[dt_ItemsPendientes]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Filtrar&amp;SubidaOrq - Invoke Workflow File (Portanet\Filtrar&amp;SubidaOrq.xaml)" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Portanet\Filtrar&amp;SubidaOrq.xaml">
+          <Sequence DisplayName="Añadir Columnas Resultado" sap:VirtualizedContainerService.HintSize="496,523" sap2010:WorkflowViewState.IdRef="Sequence_42">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Resultado" DataTable="[dt_ItemsPendientes]" DisplayName="Add Column: Resultado" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:AddDataColumn>
+            <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Observaciones" DataTable="[dt_ItemsPendientes]" DisplayName="Add Column: Observaciones" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:AddDataColumn>
+          </Sequence>
+          <Switch x:TypeArguments="x:String" DisplayName="Switch Filtro &amp; Recogida Info" Expression="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" sap:VirtualizedContainerService.HintSize="496,289" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+            <Sequence x:Key="VentanaCambio" DisplayName="Proceso Ventana de Cambio" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_41">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FilterDataTable DataTable="[dt_ItemsPendientes]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_ItemsPendientes]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                      <ui:FilterOperationArgument.Operand>
+                        <InArgument x:TypeArguments="x:String">["CP"]</InArgument>
+                      </ui:FilterOperationArgument.Operand>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+              <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Rango Inicial" DataTable="[dt_ItemsPendientes]" DisplayName="Add Column: Rango Inicial" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+              <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Rango Final" DataTable="[dt_ItemsPendientes]" DisplayName="Add Column: Rango Final" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+              <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="NRN Afectado" DataTable="[dt_ItemsPendientes]" DisplayName="Add Column: NRN Afectado" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:AddDataColumn>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="388,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Portanet\RecogerInfoItemASP.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtItemsPendientes">[dt_ItemsPendientes]</InOutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+            <ui:FilterDataTable x:Key="RevisionDSPs" DataTable="[dt_ItemsPendientes]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_ItemsPendientes]" SelectColumnsMode="Remove">
+              <ui:FilterDataTable.Filters>
+                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:String">["DSP1"]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                  <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                    <ui:FilterOperationArgument.Column>
+                      <InArgument x:TypeArguments="x:String">["Column1"]</InArgument>
+                    </ui:FilterOperationArgument.Column>
+                    <ui:FilterOperationArgument.Operand>
+                      <InArgument x:TypeArguments="x:String">["DSP2"]</InArgument>
+                    </ui:FilterOperationArgument.Operand>
+                  </ui:FilterOperationArgument>
+                </scg:List>
+              </ui:FilterDataTable.Filters>
+              <ui:FilterDataTable.SelectColumns>
+                <scg:List x:TypeArguments="InArgument" Capacity="4">
+                  <x:Null />
+                </scg:List>
+              </ui:FilterDataTable.SelectColumns>
+            </ui:FilterDataTable>
+          </Switch>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SubidaItemsToQueue - Invoke Workflow File (Portanet\SubidaItemsToQueue.xaml)" sap:VirtualizedContainerService.HintSize="496,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Portanet\SubidaItemsToQueue.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtItemsPendientes">[dt_ItemsPendientes]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorQueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
@@ -160,7 +269,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="664,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -208,7 +317,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="664,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
